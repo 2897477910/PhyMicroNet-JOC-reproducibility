@@ -1,0 +1,11 @@
+{
+  "analysis_complete": true,
+  "records": 473,
+  "unique_exact_parents": 413,
+  "available_records": 473,
+  "basic_quality_pass_records": 473,
+  "ionization_features_sha256": "5b8ddefad2fb96b94d79af29f307e430a9397df44b72b3fe0c2b955f80c85a8c",
+  "microstate_distributions_sha256": "5088d807ad320e91c47bef36df19430d3b6f0599001b068d3a0cd51c453d0097",
+  "predicted_pka_transitions_sha256": "1448d900eb39c115cc70b692b4fbb286fd807057665801af9c6ec3c3e7f6a05b",
+  "feature_contract_sha256": "65ebafdc17fbdbbc6a108cf1f66870bc69c5311f61cd45bd60ef77e12fdb5707"
+}

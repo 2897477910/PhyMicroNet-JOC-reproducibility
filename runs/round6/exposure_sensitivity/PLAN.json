@@ -1,0 +1,111 @@
+{
+  "created_utc": "2026-09-24T14:38:40.620169+00:00",
+  "status": "exploratory_after_primary_results_and_public_identity_audit; frozen before stratum evaluation",
+  "inputs": {
+    "logd_predictions": {
+      "path": "runs/round5/combined_logd/predictions.csv",
+      "sha256": "da4c054afb7c1fc6f716efaa655f18450c590f7fa086727913c95596e62ca01d"
+    },
+    "solubility_predictions": {
+      "path": "runs/round5/combined_solubility/predictions.csv",
+      "sha256": "11786c47754f673bbaed803983685e8797898e592c90975a508f5a15bed7652c"
+    },
+    "external_predictions": {
+      "path": "runs/round5/external_asap/predictions.csv",
+      "sha256": "4ad466e90378082ef020c24bb799d9d390705d016a7a6867d8110d899069f42e"
+    },
+    "upstream_ready": {
+      "path": "runs/round6/upstream_exposure/results/READY.json",
+      "sha256": "d8c5f695b22ead33d7cf419744adac05c58ad53ff60d203e3ceb7a0cb9dbaf79"
+    },
+    "identity_matches": {
+      "path": "runs/round6/upstream_exposure/results/identity_matches.csv",
+      "sha256": "fc45a7640d2f5b87dd0e17a732e017a8d45ccaa245db1d81d2a6d351449111a0"
+    },
+    "query_identities": {
+      "path": "runs/round6/upstream_exposure/results/query_identities.csv",
+      "sha256": "a6ef0dd9c2d95d204b17cb03e2e1e079aaf59b572f6b5b30a35d919cc38fca45"
+    },
+    "corpus_inventory": {
+      "path": "runs/round6/upstream_exposure/results/corpus_inventory.csv",
+      "sha256": "bc79f708ef0960ad5b2666586495b2fd33c95f615a40d84653095ec60719dca7"
+    },
+    "external_neighbors": {
+      "path": "runs/round5_external_domain/external_neighbors.csv",
+      "sha256": "8e524d85cde094ccc61dec62058bee0aab45b4e612e038bb75d3161e6fae409d"
+    },
+    "verified_kernel": {
+      "path": "scripts/analyze_round6_robustness.py",
+      "sha256": "71ab112187e9468e69e514a53cefd09846cdd1528a864ca3c8bf9004755f15bf"
+    }
+  },
+  "script_path": "scripts/analyze_round6_exposure_sensitivity.py",
+  "candidate_training_corpora": [
+    "chembl_train",
+    "dwar-iBond"
+  ],
+  "explicitly_excluded_corpora": [
+    "chembl_valid",
+    "novartis_acid",
+    "novartis_base",
+    "sampl6",
+    "sampl7",
+    "sampl8"
+  ],
+  "identity_rules": [
+    "project_normalized",
+    "stereo_stripped_normalized"
+  ],
+  "strata": [
+    "matched",
+    "nonmatched"
+  ],
+  "cohorts": [
+    "logd",
+    "solubility",
+    "external"
+  ],
+  "classification": "For a given endpoint/rule, any matching source record in the recovered query table exposes its whole project-normalized compound; evaluate only rows with frozen saved R5 ensemble predictions. Never divide duplicate compounds between matched/nonmatched. Stereo-stripped matches can cover multiple normalized compound IDs.",
+  "models": [
+    "parent_only",
+    "parent_fn",
+    "parent_ionization",
+    "dominant",
+    "uniform",
+    "prior"
+  ],
+  "contrasts": [
+    [
+      "parent_ionization",
+      "parent_only"
+    ],
+    [
+      "dominant",
+      "parent_ionization"
+    ],
+    [
+      "uniform",
+      "dominant"
+    ],
+    [
+      "prior",
+      "uniform"
+    ]
+  ],
+  "metrics": [
+    "record_MAE",
+    "compound_MAE"
+  ],
+  "estimand": "Mean across normalized compounds of within-compound mean paired absolute-error differences, candidate minus reference. Do not average labels before absolute errors.",
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 261024,
+    "interval": "unadjusted conditional percentile 95%; numpy linear quantiles",
+    "unit": "normalized compound",
+    "rng": "fresh default_rng(seed) per cohort/rule/stratum/unit, common draws for contrasts, sorted IDs, verified R6 ratio kernel"
+  },
+  "external_components": "For uniform-dominant and prior-uniform only, T60 and T70 existing labels. Resample retained nonempty components and use sampled delta total / sampled compound count. At least two distinct components required; fewer gives explicit NA CI, never zero-width invented intervals. Subsetting does not rebuild components.",
+  "small_strata": "Empty: NA point/CI; singleton compound: finite point, NA bootstrap CI. Component <2: finite point if available, NA CI. Always record status and counts.",
+  "preservation": "No new fitting, forward prediction, source/model/target changes, residual removal, or replacement of primary results. All 12 cohort/rule/stratum cells reported regardless of matching rate or effect.",
+  "interpretation": "Recovered candidate-public-training-corpus overlap is not proof of exact deployed-checkpoint membership. Nonmatched is not certified unseen; normalization failures, partial attribution and version gaps remain. Released validation, Novartis and SAMPL matches do not enter the training-candidate union."
+}

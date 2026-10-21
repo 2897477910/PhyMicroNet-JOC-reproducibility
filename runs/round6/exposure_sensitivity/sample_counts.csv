@@ -1,0 +1,13 @@
+cohort,identity_rule,stratum,n_records,n_compounds,total_evaluated_records,total_evaluated_compounds,record_fraction,compound_fraction,source_query_records,source_query_compounds,direct_match_evaluated_records,status
+logd,project_normalized,matched,2428,2408,4200,4178,0.57809523809523811,0.57635232168501671,4200,4178,2428,descriptive_exposure_stratum
+logd,project_normalized,nonmatched,1772,1770,4200,4178,0.42190476190476189,0.42364767831498323,4200,4178,0,descriptive_exposure_stratum
+logd,stereo_stripped_normalized,matched,2510,2490,4200,4178,0.59761904761904761,0.59597893729056961,4200,4178,2510,descriptive_exposure_stratum
+logd,stereo_stripped_normalized,nonmatched,1690,1688,4200,4178,0.40238095238095239,0.40402106270943033,4200,4178,0,descriptive_exposure_stratum
+solubility,project_normalized,matched,165,165,353,350,0.46742209631728043,0.47142857142857142,1763,1748,165,descriptive_exposure_stratum
+solubility,project_normalized,nonmatched,188,185,353,350,0.53257790368271951,0.52857142857142858,1763,1748,0,descriptive_exposure_stratum
+solubility,stereo_stripped_normalized,matched,170,170,353,350,0.48158640226628896,0.48571428571428571,1763,1748,170,descriptive_exposure_stratum
+solubility,stereo_stripped_normalized,nonmatched,183,180,353,350,0.5184135977337111,0.51428571428571423,1763,1748,0,descriptive_exposure_stratum
+external,project_normalized,matched,0,0,473,413,0,0,473,413,0,empty_stratum
+external,project_normalized,nonmatched,473,413,473,413,1,1,473,413,0,descriptive_exposure_stratum
+external,stereo_stripped_normalized,matched,0,0,473,413,0,0,473,413,0,empty_stratum
+external,stereo_stripped_normalized,nonmatched,473,413,473,413,1,1,473,413,0,descriptive_exposure_stratum

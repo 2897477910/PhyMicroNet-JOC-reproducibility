@@ -1,0 +1,484 @@
+{
+  "complete": true,
+  "comparison_files": 46,
+  "max_abs_numeric_difference": 0.0,
+  "absolute_tolerance": 1e-10,
+  "trained_models": 0,
+  "upstream_neural_inference": 0,
+  "environment": {
+    "python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "win32",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "rdkit": "2025.9.6"
+  },
+  "comparisons": [
+    {
+      "file": "runs\\round6\\robustness\\bootstrap_draws.npz",
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\robustness\\component_sizes.csv",
+      "rows": 632,
+      "columns": 8,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\robustness\\compound_effects.csv",
+      "rows": 25304,
+      "columns": 9,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\robustness\\existing_point_verification.csv",
+      "rows": 72,
+      "columns": 6,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\robustness\\external_component_membership.csv",
+      "rows": 473,
+      "columns": 7,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\robustness\\extreme_residuals.csv",
+      "rows": 370,
+      "columns": 38,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\robustness\\influence.csv",
+      "rows": 26568,
+      "columns": 15,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\robustness\\influence_flagged.csv",
+      "rows": 600,
+      "columns": 15,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\robustness\\metrics.csv",
+      "rows": 62,
+      "columns": 9,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\robustness\\paired_effects.csv",
+      "rows": 52,
+      "columns": 26,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\robustness\\source_heterogeneity.csv",
+      "rows": 4,
+      "columns": 14,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\exposure_sensitivity\\bootstrap_draws.npz",
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\exposure_sensitivity\\candidate_training_corpus_inventory.csv",
+      "rows": 2,
+      "columns": 9,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\exposure_sensitivity\\metrics.csv",
+      "rows": 72,
+      "columns": 9,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\exposure_sensitivity\\paired_effects.csv",
+      "rows": 64,
+      "columns": 19,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\exposure_sensitivity\\record_exposure_assignments.csv",
+      "rows": 10052,
+      "columns": 10,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\exposure_sensitivity\\sample_counts.csv",
+      "rows": 12,
+      "columns": 13,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\prior_diagnostics\\binned_summaries.csv",
+      "rows": 112,
+      "columns": 18,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\prior_diagnostics\\bootstrap_correlations.npz",
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\prior_diagnostics\\correlations.csv",
+      "rows": 32,
+      "columns": 14,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\prior_diagnostics\\per_compound.csv",
+      "rows": 4941,
+      "columns": 34,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\prior_diagnostics\\per_record.csv",
+      "rows": 5026,
+      "columns": 27,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\prior_diagnostics\\ph_flanks_per_compound.csv",
+      "rows": 9882,
+      "columns": 8,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\prior_diagnostics\\ph_flanks_per_record.csv",
+      "rows": 10052,
+      "columns": 9,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\prior_diagnostics\\ph_flanks_summary.csv",
+      "rows": 30,
+      "columns": 10,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round5_external_domain\\asap_prior_structure_summary.csv",
+      "rows": 473,
+      "columns": 5,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round5_external_domain\\az_parent_descriptors.csv",
+      "rows": 4200,
+      "columns": 8,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round5_external_domain\\az_prior_structure_summary.csv",
+      "rows": 4200,
+      "columns": 5,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round5_external_domain\\candidate_components.csv",
+      "rows": 235,
+      "columns": 10,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round5_external_domain\\descriptor_distributions.csv",
+      "rows": 12,
+      "columns": 13,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round5_external_domain\\external_neighbors.csv",
+      "rows": 473,
+      "columns": 18,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round5_external_domain\\external_scaffold_counts.csv",
+      "rows": 234,
+      "columns": 8,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round5_external_domain\\formal_charge_counts.csv",
+      "rows": 3,
+      "columns": 3,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round5_external_domain\\prior_distribution_comparison.csv",
+      "rows": 2,
+      "columns": 11,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round5_external_domain\\scaffold_overlap.csv",
+      "rows": 2650,
+      "columns": 8,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round5_external_domain\\selected_state_counts.csv",
+      "rows": 16,
+      "columns": 3,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round5_external_domain\\similarity_coverage.csv",
+      "rows": 2,
+      "columns": 17,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round5_cases\\r5_final\\eligible_case_pool.csv",
+      "rows": 2629,
+      "columns": 6,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round5_cases\\r5_final\\selected_case_states.csv",
+      "rows": 34,
+      "columns": 8,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round5_cases\\r5_final\\selected_cases.csv",
+      "rows": 6,
+      "columns": 68,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round5_cases\\r5_final\\selection_pool_counts.csv",
+      "rows": 9,
+      "columns": 5,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round3_pka_audit_full\\az_pka_exploratory_point_comparisons.csv",
+      "rows": 157,
+      "columns": 46,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round3_pka_audit_full\\az_pka_mapping_all_records.csv",
+      "rows": 549,
+      "columns": 46,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round3_pka_audit_full\\az_pka_prediction_overlap.csv",
+      "rows": 324,
+      "columns": 46,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\integrated_diagnostics\\external_weighting_influence_enriched.csv",
+      "rows": 413,
+      "columns": 49,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "file": "runs\\round6\\integrated_diagnostics\\extreme_cases_enriched.csv",
+      "rows": 370,
+      "columns": 48,
+      "max_abs_numeric_difference": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    }
+  ],
+  "core_contrasts": [
+    {
+      "cohort": "logd",
+      "candidate": "parent_ionization",
+      "reference": "parent_only",
+      "delta_MAE": -0.0132876782736236,
+      "ci_low": -0.0220382871260593,
+      "ci_high": -0.0046829389536273
+    },
+    {
+      "cohort": "logd",
+      "candidate": "dominant",
+      "reference": "parent_ionization",
+      "delta_MAE": 0.0016177834562576,
+      "ci_low": -0.0052669264942495,
+      "ci_high": 0.0084203443136381
+    },
+    {
+      "cohort": "logd",
+      "candidate": "uniform",
+      "reference": "dominant",
+      "delta_MAE": -0.0022216832303986,
+      "ci_low": -0.0095634019570117,
+      "ci_high": 0.0054578132115626
+    },
+    {
+      "cohort": "logd",
+      "candidate": "prior",
+      "reference": "uniform",
+      "delta_MAE": -0.0013683510495997,
+      "ci_low": -0.0084577935409451,
+      "ci_high": 0.0054210497214018
+    },
+    {
+      "cohort": "solubility",
+      "candidate": "parent_ionization",
+      "reference": "parent_only",
+      "delta_MAE": -0.0500187855373893,
+      "ci_low": -0.0798541354525746,
+      "ci_high": -0.0213806264755586
+    },
+    {
+      "cohort": "solubility",
+      "candidate": "dominant",
+      "reference": "parent_ionization",
+      "delta_MAE": -0.0102366141753674,
+      "ci_low": -0.0218755552382921,
+      "ci_high": 0.0011881389460248
+    },
+    {
+      "cohort": "solubility",
+      "candidate": "uniform",
+      "reference": "dominant",
+      "delta_MAE": 0.0216421451043116,
+      "ci_low": -0.0052407007613784,
+      "ci_high": 0.0480208172195061
+    },
+    {
+      "cohort": "solubility",
+      "candidate": "prior",
+      "reference": "uniform",
+      "delta_MAE": -0.0085515381016602,
+      "ci_low": -0.0359738986551077,
+      "ci_high": 0.0188550122680586
+    },
+    {
+      "cohort": "external",
+      "candidate": "parent_ionization",
+      "reference": "parent_only",
+      "delta_MAE": -0.0171362128159806,
+      "ci_low": -0.0448081711325614,
+      "ci_high": 0.0101891219654212
+    },
+    {
+      "cohort": "external",
+      "candidate": "dominant",
+      "reference": "parent_ionization",
+      "delta_MAE": 0.0069890746030981,
+      "ci_low": -0.0102703184255239,
+      "ci_high": 0.0242361152769447
+    },
+    {
+      "cohort": "external",
+      "candidate": "uniform",
+      "reference": "dominant",
+      "delta_MAE": -0.0269846891309163,
+      "ci_low": -0.0453239118712852,
+      "ci_high": -0.0082648240191584
+    },
+    {
+      "cohort": "external",
+      "candidate": "prior",
+      "reference": "uniform",
+      "delta_MAE": 0.0204479612210385,
+      "ci_low": 0.0023734675369599,
+      "ci_high": 0.0382943375473191
+    }
+  ],
+  "tested_command": "python reproduce.py --mode stats --run-id fresh_env_validation",
+  "fresh_dependency_installation_tested": true,
+  "limitations": [
+    "Statistics from frozen predictions, not training or upstream inference.",
+    "Historical timing not rerun."
+  ]
+}

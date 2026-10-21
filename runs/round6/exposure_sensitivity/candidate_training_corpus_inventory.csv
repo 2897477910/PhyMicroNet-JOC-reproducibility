@@ -1,0 +1,3 @@
+corpus,published_role,sha256,bytes,rows,state_occurrences,screen_candidates,standardized_candidates,failed_states
+chembl_train,released pretraining train candidate corpus,d3e1d0b47f84eb854656925869210f96d0a96a3cfa7e05fc1c25894dc7870a45,210996829,1106294,3082908,12510,12507,202
+dwar-iBond,released fine-tuning candidate corpus; exact 8228-row checkpoint version unrecovered,c5359e9d11afa21bfe59aa023afb8674d206440e9bf188c87de5506e1994d14d,1106172,8232,27134,499,497,2

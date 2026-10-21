@@ -1,0 +1,10 @@
+{
+  "analysis_complete": true,
+  "records": 4200,
+  "available_records": 4200,
+  "basic_quality_pass_records": 4200,
+  "ionization_features_sha256": "dd802d24cbb7166b04ae69e0cae06309e457169d48174a1f98891768a9e4b578",
+  "microstate_distributions_sha256": "63c28f44a9d5810cd808f993a6ec164acc4a9c06c8adab643163aeb3c56e376f",
+  "predicted_pka_transitions_sha256": "fcc9452a6dee94e70c86927d386d6e3159781e28d0d571b643db05186a4d29b1",
+  "feature_contract_sha256": "205ae5a2eb0ffd066a4d630df5dc53b96d1e400d48b14bbea4b6fb5096e67d70"
+}

@@ -1,0 +1,113 @@
+{
+  "audit_run_complete": true,
+  "full_released_corpora_scanned": true,
+  "exact_checkpoint_exposure_audit_exhaustive": false,
+  "checkpoint": {
+    "sha256": "48667090c330e745f0d91fd2eb159e04f41052d71b394e25d6ad2a2090d71c75",
+    "size": 571248843,
+    "zenodo_record": 19288649,
+    "zenodo_md5_verified": true,
+    "training_args_extraction": "Restricted Namespace-only pickle prefix; no torch model/storage loaded",
+    "args_file": "checkpoint_training_args.json",
+    "task_name": "t_dwar8228_v_novatis_a_b",
+    "split_mode": "predefine",
+    "training_subset": "train",
+    "validation_subset": "valid",
+    "best_checkpoint_metric": "valid_agg_rmse",
+    "finetune_from_model": "[historical absolute path omitted in public metadata]",
+    "exact_training_row_manifest_recovered": false,
+    "exact_pretraining_checkpoint_hash_recovered": false
+  },
+  "status": "finite public-corpus identity audit complete; exact checkpoint attribution incomplete",
+  "created_utc": "2026-09-24T14:36:50.441812+00:00",
+  "seconds": 372.1252775192261,
+  "workers": 12,
+  "rdkit_version": "2025.09.6",
+  "code_sha256": "f6bfc646e2192ed42789b2636bf339099b26dcb90b7501b3d6b141390e2fd83e",
+  "source_hashes": {
+    "data/processed/logd/molecules.csv": "8be73c5481bf535fbf7e1e5f954bfec1874148142592bfa194afc295eca7165b",
+    "data/processed/solubility_locked/molecules.csv": "faedf4d521afb08edde873389845b446c4e9f1c1380f9cd42aa65ef1d5d2b38e",
+    "data/processed/round5_external/molecules.csv": "f08a7ac0f8d58bc4c21da2422c5c2db881ac5300a13a085d183148e5c6bff410"
+  },
+  "chemistry_sha256": "d107e959da9ba023776a4945169ee303df6f911e2823e8a9110a1a00c5269007",
+  "query_records": 6436,
+  "coarse_screen": "RDKit ElementGraph after conservative counterion removal and removal of stereo/isotope labels; followed by exact project identities on candidate matches",
+  "screen_validation": [
+    {
+      "corpus": "chembl_train",
+      "unfiltered_variants_checked": 200,
+      "passed": true,
+      "unfiltered_normalization_errors": []
+    },
+    {
+      "corpus": "chembl_valid",
+      "unfiltered_variants_checked": 200,
+      "passed": true,
+      "unfiltered_normalization_errors": []
+    },
+    {
+      "corpus": "dwar-iBond",
+      "unfiltered_variants_checked": 289,
+      "passed": true,
+      "unfiltered_normalization_errors": []
+    },
+    {
+      "corpus": "novartis_acid",
+      "unfiltered_variants_checked": 333,
+      "passed": true,
+      "unfiltered_normalization_errors": [
+        {
+          "upstream_row": 4,
+          "state_smiles": "CC(C(=O)O)c1ccc2c(c1)[cH-]c1ccccc12",
+          "error": "ValueError('Project-normalized SMILES cannot be reparsed by RDKit')"
+        },
+        {
+          "upstream_row": 73,
+          "state_smiles": "O=C(NO)[c-]1c2ccccc2c2ccccc21",
+          "error": "ValueError('Project-normalized SMILES cannot be reparsed by RDKit')"
+        },
+        {
+          "upstream_row": 85,
+          "state_smiles": "O=C(O)COc1ccc2c(c1)[cH-]c1ccccc12",
+          "error": "ValueError('Project-normalized SMILES cannot be reparsed by RDKit')"
+        }
+      ]
+    },
+    {
+      "corpus": "novartis_base",
+      "unfiltered_variants_checked": 425,
+      "passed": true,
+      "unfiltered_normalization_errors": []
+    },
+    {
+      "corpus": "sampl6",
+      "unfiltered_variants_checked": 111,
+      "passed": true,
+      "unfiltered_normalization_errors": []
+    },
+    {
+      "corpus": "sampl7",
+      "unfiltered_variants_checked": 43,
+      "passed": true,
+      "unfiltered_normalization_errors": []
+    },
+    {
+      "corpus": "sampl8",
+      "unfiltered_variants_checked": 117,
+      "passed": true,
+      "unfiltered_normalization_errors": []
+    }
+  ],
+  "failed_states": 205,
+  "upstream_state_match_rows": 25947,
+  "no_downstream_or_upstream_targets_used": true,
+  "nearest_neighbor_analysis": "not performed; outside finite identity audit",
+  "artifacts": {
+    "corpus_inventory.csv": "bc79f708ef0960ad5b2666586495b2fd33c95f615a40d84653095ec60719dca7",
+    "identity_matches.csv": "fc45a7640d2f5b87dd0e17a732e017a8d45ccaa245db1d81d2a6d351449111a0",
+    "overlap_summary.csv": "ca976e360bfb4db6f64f36b10af9ceecbe65c5d0711bdaadab0814a992d0d782",
+    "parse_or_normalization_failures.csv": "ae4b93604006b9a0ed5a07ca17d36ef0d691b733b05f01f034e2cb36cd0ec6f4",
+    "query_identities.csv": "a6ef0dd9c2d95d204b17cb03e2e1e079aaf59b572f6b5b30a35d919cc38fca45",
+    "upstream_state_matches.csv": "cef5eb950f56622dfefedc285ee18f2f4341f230a2f0683bbb753663dff50785"
+  }
+}

@@ -1,0 +1,28 @@
+Data attribution and license notices (no blanket relicensing)
+
+1. AZ logD / Lipophilicity, AZ solubility and experimental pKa:
+   AstraZeneca deposited data in ChEMBL; Lipophilicity was obtained via the DeepChem/MoleculeNet mirror.
+   ChEMBL document CHEMBL3301361; assay CHEMBL3301364 and pKa assays CHEMBL3301362, CHEMBL3301373-3301376.
+   Mirror: https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/Lipophilicity.csv
+   ChEMBL: https://www.ebi.ac.uk/chembl/
+   ChEMBL data license: Creative Commons Attribution-ShareAlike 3.0 Unported.
+   License: https://creativecommons.org/licenses/by-sa/3.0/
+   Official notice: https://chembl.gitbook.io/chembl-interface-documentation/frequently-asked-questions/general-questions
+   Citation: Zdrazil et al., The ChEMBL Database in 2023, Nucleic Acids Research 52(D1), D1180-D1192, DOI 10.1093/nar/gkad1004.
+   Included experimental values, normalized structures and ChEMBL-derived data adaptations remain subject to the applicable attribution/share-alike terms; RDKit-computed descriptors are not extracted commercial-property predictions from ChEMBL.
+
+2. ASAP external logD data:
+   Source: https://doi.org/10.5281/zenodo.15582067
+   Associated paper: https://doi.org/10.1021/acs.jcim.5c02106
+   Protocol: https://doi.org/10.17504/protocols.io.e6nvw14kdlmk/v1
+   Archived dataset license: Creative Commons Attribution 4.0 International.
+   License: https://creativecommons.org/licenses/by/4.0/
+   Included adaptations: normalization, overlap exclusions, enhanced-stereo annotations, and a 473-record numeric-logD cohort. Labels are retained as published point values; no equality/censoring status is invented.
+
+3. Uni-pKa-derived inputs:
+   Frozen predicted microstates, priors, ionization summaries and pKa transitions produced in the original project with the unchanged upstream checkpoint identified by SHA256 48667090c330e745f0d91fd2eb159e04f41052d71b394e25d6ad2a2090d71c75.
+   Checkpoint source: https://zenodo.org/records/19288649
+   Neither upstream engine nor weights nor complete candidate-training corpora are distributed in this repository. Recovered identity-match and corpus-inventory tables are audit summaries, not proof of exact checkpoint training membership.
+
+4. Project analysis code and numerical analysis outputs:
+   No new MIT/Apache or other blanket license has been granted by this packaging operation. Rights remain with the relevant rights holders. Third-party data licenses above continue to apply, including to adaptations where applicable.

@@ -1,0 +1,48 @@
+{
+  "records": 1763,
+  "ionization_available": 1763,
+  "state_prior_available": 1763,
+  "max_states": 8,
+  "conformer_fallback_records": 0,
+  "feature_names": [
+    "net_zero_fraction",
+    "uncharged_atom_fraction",
+    "zwitterion_fraction",
+    "positive_fraction",
+    "negative_fraction",
+    "mean_charge",
+    "charge_variance",
+    "entropy",
+    "dominant_occupancy",
+    "log1p_n_states"
+  ],
+  "n_selected_distribution": {
+    "1": 161,
+    "2": 316,
+    "3": 65,
+    "4": 262,
+    "5": 70,
+    "6": 25,
+    "7": 3,
+    "8": 861
+  },
+  "retained_mass_describe_available": {
+    "count": 1763.0,
+    "mean": 0.9999135507108564,
+    "std": 0.001255633099347983,
+    "min": 0.9588181883448086,
+    "25%": 0.9999999978483761,
+    "50%": 1.0,
+    "75%": 1.0,
+    "max": 1.0000000000000002
+  },
+  "retained_mass_below_0_95": 0,
+  "retained_mass_below_0_50": 0,
+  "rejected_candidate_events": {},
+  "original_columns_values_rows_folds_unchanged": true,
+  "target_column": "Numerical copy of logS_molar; original y and source target fields preserved",
+  "training_or_endpoint_metrics_performed": false,
+  "fallback": "Parent-only prior1, state_prior_available=false; missing scalars NaN; same as R3",
+  "population_scope": "R3-equivalent parent-plus-top8, guarded, renormalized predicted populations; not measured",
+  "scalar_scaling": "None at cache time; future imputation and scaling must use training folds only"
+}

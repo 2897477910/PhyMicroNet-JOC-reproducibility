@@ -1,0 +1,40 @@
+{
+  "study": "Independent-source ASAP logD7.4 external prediction without endpoint refitting",
+  "frozen_before_external_predictions": true,
+  "source": {
+    "directory": "data/processed/round5_external",
+    "molecules_sha256": "f08a7ac0f8d58bc4c21da2422c5c2db881ac5300a13a085d183148e5c6bff410",
+    "records": 473,
+    "normalized_compounds": 413,
+    "dataset_doi": "10.5281/zenodo.15582067",
+    "paper_doi": "10.1021/acs.jcim.5c02106",
+    "protocol_doi": "10.17504/protocols.io.e6nvw14kdlmk/v1",
+    "original_ADMET_csv_sha256": "3388480e9a312c17c9b621352f9414b0456ac19fc44604570e82a112e2200603",
+    "license_of_archived_zenodo_version": "CC-BY-4.0",
+    "scope": "Direct experimental octanol/PBS distribution coefficient at protocol pH 7.4; Bienta shake-flask and both-phase LC-MS",
+    "label_policy": "Use published numeric LogD as point targets; release lacks explicit relation fields, no equality or absence of censoring invented",
+    "cohort": "560 original rows, 478 numeric LogD; exclude five rows matching any AZ logD or solubility identity or stereo-stripped identity; retain all 473 others including within-source repeats",
+    "source_split": "Original challenge Train 347 and Test 126 are both external to AZ training; preserve their labels for secondary descriptive scopes only"
+  },
+  "structures": {
+    "parent": "Same project parent standardization after clearing atom chiral tags only for atoms in source AND/OR enhanced stereogroups; retain other defined atomic and double-bond stereochemistry",
+    "retention": "Keep original CXSMILES and enhanced group type/index metadata",
+    "overlap": "Conservative union of project-normalized and additionally stereo-stripped identities against all AZ logD and solubility records, before prediction",
+    "within_external_duplicates": "Keep all 39 duplicate normalized-compound groups (99 rows); report record metrics and compound-cluster paired intervals",
+    "uncertain_stereo_records": 200,
+    "no_AND_OR_sensitivity_records": 273
+  },
+  "cache": "data/processed/round5_unipka_external",
+  "inference_raw": "runs/round5_unipka_external",
+  "prior": {"checkpoint_sha256": "48667090c330e745f0d91fd2eb159e04f41052d71b394e25d6ad2a2090d71c75", "source_policy": "Unchanged R3 checkpoint, template, three-pH diagnostics, quality/fallback rule and guarded top8 selector", "use_pH": 7.4, "pH_values": [6.4, 7.4, 8.4], "labels_used": false, "workers": 2, "threads_per_batch": 2},
+  "models": ["parent_only", "parent_fn", "parent_ionization", "dominant", "uniform", "prior"],
+  "seeds": [11, 29, 47],
+  "folds": [0, 1, 2, 3, 4],
+  "checkpoint_policy": "Use all corresponding R2/R3/R5 AZ logD best-validation checkpoints; never use external performance for selection, refitting, early stopping or calibration",
+  "aggregation": "For each seed average its five AZ-fold predictions, then average all three seed predictions; all 15 fits contribute equally per model; retain every per-fit prediction",
+  "scaling": "Apply saved training-only per-fit descriptor and ionization transforms unchanged, with NaN dummy endpoint targets during model forward",
+  "paired_contrasts": [["parent_fn", "parent_only"], ["parent_ionization", "parent_fn"], ["parent_ionization", "parent_only"], ["dominant", "parent_ionization"], ["uniform", "dominant"], ["prior", "dominant"], ["prior", "uniform"], ["uniform", "parent_ionization"], ["prior", "parent_ionization"]],
+  "evaluation": {"primary": "All 473 retained records", "sensitivity": ["All 273 records without AND/OR groups", "Original challenge Train and Test separately"], "metrics": ["MAE", "RMSE", "R2"], "bootstrap_draws": 2000, "bootstrap_seed": 773, "bootstrap_unit": "normalized compound", "limitations": "Unadjusted conditional intervals; scaffold-series correlation and unknown upstream pretraining overlap; not participation in the original blind challenge"},
+  "output": "runs/round5/external_asap",
+  "not_performed": ["External endpoint training", "External-label-based model selection", "Full-AZ refits", "Additional model search if performance is disappointing"]
+}

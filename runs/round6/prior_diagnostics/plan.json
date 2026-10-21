@@ -1,0 +1,111 @@
+{
+  "created_utc": "2026-09-24T14:14:51.883698+00:00",
+  "phase": "frozen_before_new_association_computation",
+  "exploratory": true,
+  "cohorts": {
+    "az_logd": {
+      "predictions": "runs/round5/combined_logd/predictions.csv",
+      "completion": "runs/round5/combined_logd/READY.json",
+      "cache": "data/processed/round3_unipka",
+      "raw": "runs/round3_unipka_full"
+    },
+    "az_solubility": {
+      "predictions": "runs/round5/combined_solubility/predictions.csv",
+      "completion": "runs/round5/combined_solubility/READY.json",
+      "cache": "data/processed/round4_unipka_solubility",
+      "raw": "runs/round4_unipka_solubility"
+    },
+    "asap_external": {
+      "predictions": "runs/round5/external_asap/predictions.csv",
+      "completion": "runs/round5/external_asap/EVALUATION_READY.json",
+      "cache": "data/processed/round5_unipka_external",
+      "raw": "runs/round5_unipka_external"
+    }
+  },
+  "features": {
+    "full_entropy": "Shannon entropy, nats, full normalized distribution at pH7.4",
+    "dominant_occupancy": "Maximum occupancy, full distribution",
+    "effective_state_number": "exp(record full entropy), then average within compound",
+    "full_state_count": "All enumerated states in full distribution, including zero occupancy",
+    "parent_is_dominant": "first argmax of accepted frozen cache prior has index0; index0 must equal parent; per-compound fraction, mixed category if between0and1",
+    "neutral_fraction": "Full net-zero formal-charge fraction (not locally uncharged proxy)",
+    "selected_retained_mass": "Frozen accepted selected-set retained_mass_fraction, clip[0,1] then round12 to remove normalization epsilon only",
+    "external_nn_az": "External max Morgan1024/radius2/chiral Tanimoto to complete AZ4200 parent space, not fold training-only"
+  },
+  "compound_estimand": "Mean over all records of abs(prior-y)-abs(uniform-y); positive means weighting worse. Ensemble predictions already frozen.",
+  "compound_features": "Arithmetic record means; state count and binary can become fractional. Preserve n_records, n_unique_parents and mixed-parent flag. No residual/extreme deletion.",
+  "full_parent_diagnostic": "Also report parent equals full-distribution dominant_smiles using canonical isomeric SMILES; not primary accepted-candidate binary.",
+  "missingness": "Keep every compound/record in tidy output. Per-feature finite pairs only; report missing counts. Unavailable full priors get NaN rather than fabricated confidence.",
+  "bootstrap": {
+    "draws": 5000,
+    "seed": 24681357,
+    "method": "Percentile95% exact reranked Spearman on resampled compounds; external also sample all T60 connected components with replacement and retain all compound members/multiplicities. Component-bootstrap replicate statistic remains compound-weighted; variable total compound count.",
+    "invalid_draws": "Constant resamples produce NaN; report valid count; flag if <95% valid. No p-value headline, no multiplicity-adjusted claim.",
+    "bin_effect": "Compound-average delta; bootstrap both units as applicable, fixed bin boundaries, no re-estimation of cutpoints per draw."
+  },
+  "bins": {
+    "rule": "Quartile cutpoints [0.25,0.50,0.75] by numpy linear quantile before response association; collapse duplicate cutpoints; endpoints (-inf,+inf) preserve extremes; right-closed intervals. Constant reference collapses to one bin.",
+    "reference": {
+      "az_logd": "own compound features",
+      "az_solubility": "own compound features",
+      "asap_external": "az_logd compound features except external_nn_az uses external response-free features"
+    },
+    "binary": "parent_is_dominant categories no,yes,mixed; separately summarize. Spearman uses fraction across compounds."
+  },
+  "ph_flanks": {
+    "enabled": true,
+    "reference": 7.4,
+    "flanks": [
+      6.4,
+      8.4
+    ],
+    "outputs": "Full-dominant state change, mean-charge/net-zero/entropy difference, full-distribution total variation. Record/compound descriptive outputs only; no property predictions or pH-transfer validation. No alternate-pH model candidate selection."
+  },
+  "limitations": [
+    "All analyses exploratory after R5 outcomes known",
+    "Conditional on fitted models/fixed splits and upstream predictions; no causal mechanism claim",
+    "Entropy and exp(entropy) are related summaries, not independent evidence",
+    "T60 components are transitive fingerprint groups, not validated independent chemical series"
+  ],
+  "input_hashes": {
+    "runs/round5/combined_logd/predictions.csv": "da4c054afb7c1fc6f716efaa655f18450c590f7fa086727913c95596e62ca01d",
+    "runs/round5/combined_logd/READY.json": "f119c46b136a2ae7700aaedaf5af669056f491c7ca523d93764b3279f572362b",
+    "data/processed/round3_unipka/molecules.csv": "99ff909297e7bd371b78f2a77dcc85211dd0c94f78564108ff8e35e72ddd1c9e",
+    "data/processed/round3_unipka/states.jsonl": "4b8a921ef352e3d6b06cab1a8242f68fbe0562bfb550796a3f1408f3d80af427",
+    "data/processed/round3_unipka/state_selection_audit.csv": "74526500b98d1631d667f33e17fddf85a310d2f92c2f95a56effecb0a4b58248",
+    "data/processed/round3_unipka/ionization_features.npz": "df0708d4e0b86e75b2c54c39def577d51b9265632bb4c67371d84eb5582a198f",
+    "data/processed/round3_unipka/qc.json": "7bca1632e8ebf0ca432854401595bb0ff4a9a5cf91dc181454bb228694874328",
+    "runs/round3_unipka_full/ionization_features.csv": "dd802d24cbb7166b04ae69e0cae06309e457169d48174a1f98891768a9e4b578",
+    "runs/round3_unipka_full/ionization_features_all_ph.csv": "75106d317d76fda444f04250f2c8b5c4b7340ae1af7136c62f3b5f480d9a312d",
+    "runs/round3_unipka_full/microstate_distributions.csv": "63c28f44a9d5810cd808f993a6ec164acc4a9c06c8adab643163aeb3c56e376f",
+    "runs/round3_unipka_full/record_manifest.csv": "d4d137e31ea84b33ff8bd9eb4208e357cde6ba8f08f1c1c0ac816c1777cb50b4",
+    "runs/round3_unipka_full/READY.json": "14077508a497b8ed5497c841ee35dcd31f426462361a4e49708cdb0ddf6aea6c",
+    "runs/round5/combined_solubility/predictions.csv": "11786c47754f673bbaed803983685e8797898e592c90975a508f5a15bed7652c",
+    "runs/round5/combined_solubility/READY.json": "bf0c1b01fac767c27e2908e22a60a85b5e566450dee839341a210c42c391d1e3",
+    "data/processed/round4_unipka_solubility/molecules.csv": "bde898c8314572f966304ac3424b0dac1a2d6cf490f15d526391564d881092c0",
+    "data/processed/round4_unipka_solubility/states.jsonl": "953098da85a8991db132ee383d169b328948cae7ebee8e0b3afe9738959c4cf6",
+    "data/processed/round4_unipka_solubility/state_selection_audit.csv": "1000d28315c49d16d2435c49a6ba33dcf5ccd12ada5b64a0436f166a8bef0079",
+    "data/processed/round4_unipka_solubility/ionization_features.npz": "105a95b0359de4fb434120b774cba9fd1504263ca9a751850104b8a7e8229f43",
+    "data/processed/round4_unipka_solubility/qc.json": "f7881ce73208e0b891fbaba3c12dc21483057a53d82b867f821f4493857008d0",
+    "runs/round4_unipka_solubility/ionization_features.csv": "b906d151ff1131b45ec645f3d20ca064b59b5623edc3b2eed4d308f9728ed4b4",
+    "runs/round4_unipka_solubility/ionization_features_all_ph.csv": "ce812de12b3858019dd39dddbd5e11aca56b58e463ed0cb2db71e53a4749096c",
+    "runs/round4_unipka_solubility/microstate_distributions.csv": "5a9633c09e490094ee2313730868d77c896d0f91ca0534571ee989ba9c60827f",
+    "runs/round4_unipka_solubility/record_manifest.csv": "c2464417d3279c644a7f9ed42b7e1f98bfae5f65b60e3923c035127c9b44adf6",
+    "runs/round4_unipka_solubility/READY.json": "75b720753cc59f988b2f0edfcfaf6fcda04da50a45ca961a9494c5de5c42dc0b",
+    "runs/round5/external_asap/predictions.csv": "4ad466e90378082ef020c24bb799d9d390705d016a7a6867d8110d899069f42e",
+    "runs/round5/external_asap/EVALUATION_READY.json": "9597010464c1d14a8d7b25e8a8de14cfe2bc0024bf0c408de8cd9d1e1de1038f",
+    "data/processed/round5_unipka_external/molecules.csv": "ed79f5e4138e53fac5820c8df874eba3ae5016e2486a8c5ff88862643775f39d",
+    "data/processed/round5_unipka_external/states.jsonl": "bf958c54fe64b41b5b0d9b677e99e0f60143c5031f42308963e5beca1f11e75c",
+    "data/processed/round5_unipka_external/state_selection_audit.csv": "7dec3c7a55d8ded63252d2f8fd87b207faf5108ee90f50fda285e1b4e4f67c34",
+    "data/processed/round5_unipka_external/ionization_features.npz": "849d298a9fe93009f3042005bd9b147bba7d3eae8b9efe986366e04055b966cd",
+    "data/processed/round5_unipka_external/qc.json": "399e221fece7d01f550ea5ad9380d3e219e5ef512b4e9887f0d4bbd10a254cb3",
+    "runs/round5_unipka_external/ionization_features.csv": "5b8ddefad2fb96b94d79af29f307e430a9397df44b72b3fe0c2b955f80c85a8c",
+    "runs/round5_unipka_external/ionization_features_all_ph.csv": "bdbbbdc95e535125c478c91ca2988d6c1e340ca434126f56f892c4a204823db7",
+    "runs/round5_unipka_external/microstate_distributions.csv": "5088d807ad320e91c47bef36df19430d3b6f0599001b068d3a0cd51c453d0097",
+    "runs/round5_unipka_external/record_manifest.csv": "37d500b9497702b877906c29f5447853665c0716409c7bfb8b20fec6a9553251",
+    "runs/round5_unipka_external/READY.json": "630d2e1ae79f6b875543b14b98bcebbd38ce7ea45d2e8884571776b3d2961d3e",
+    "runs/round5_external_domain/external_neighbors.csv": "8e524d85cde094ccc61dec62058bee0aab45b4e612e038bb75d3161e6fae409d",
+    "runs/round5_external_domain/summary.json": "fc17d4efc9ddee1cf1e65df0b64d6c0c36ad456a397b4f4d47bac76388dc28dc"
+  },
+  "public_adaptation": "Historical exploratory plan adapted only for public metadata and removal of an unused training-source byte audit. Scientific definitions, seeds, draws and numerical inputs unchanged."
+}

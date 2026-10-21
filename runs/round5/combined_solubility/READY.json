@@ -1,0 +1,34 @@
+{
+  "endpoint": "solubility",
+  "status": "complete",
+  "models": [
+    "parent_only",
+    "parent_fn",
+    "parent_ionization",
+    "dominant",
+    "uniform",
+    "prior",
+    "tree_parent",
+    "tree_ionization"
+  ],
+  "seeds": [
+    11,
+    29,
+    47
+  ],
+  "configuration_sha256": "0df9af5fb71f614f34559651adbeff25097f643142a963c024ac52f2ab54df37",
+  "aggregation_script_sha256": "758885c197115208a6fa837ba0dca8e7c57223510cdeeb1bdb612291f105014d",
+  "n_records": 353,
+  "n_compounds": 350,
+  "represented_graph_fits": 18,
+  "new_graph_fits": 6,
+  "reused_tree_fits": 6,
+  "interpretation": "Seed SD is training variability on a fixed partition. Ensemble metrics average predictions first. Compound-bootstrap intervals are conditional on saved fitted predictions; exploratory and unadjusted.",
+  "artifact_hashes": {
+    "predictions.csv": "11786c47754f673bbaed803983685e8797898e592c90975a508f5a15bed7652c",
+    "metrics.csv": "e1f239651e0476f3147235dce0e88bc1bf7b96c4e8b0a9da302072d29faa3f54",
+    "seed_metric_summary.csv": "b0c4c1ce8de32da57d316bd6f460035fbdfb96e18c1c6bea1f62b71ab4f26c9a",
+    "paired_comparisons.csv": "48b6bcc0987a49fa233d6a7970f0197cfe2f63163fa28fe99589709261fb208f",
+    "fit_manifest.csv": "9cfda0db7381e2d822e608b8641c7be1dba2dceef2607688a1b0dee023a73bbb"
+  }
+}

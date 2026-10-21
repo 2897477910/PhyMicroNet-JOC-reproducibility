@@ -1,0 +1,12 @@
+{
+  "cache_complete": true,
+  "records": 473,
+  "manifest_sha256": "93b132141fe6f092e368ef9e9d513b1b5e87709bf87180285c7639e6d72a3e85",
+  "outputs": {
+    "molecules.csv": "ed79f5e4138e53fac5820c8df874eba3ae5016e2486a8c5ff88862643775f39d",
+    "ionization_features.npz": "849d298a9fe93009f3042005bd9b147bba7d3eae8b9efe986366e04055b966cd",
+    "states.jsonl": "bf958c54fe64b41b5b0d9b677e99e0f60143c5031f42308963e5beca1f11e75c",
+    "state_selection_audit.csv": "7dec3c7a55d8ded63252d2f8fd87b207faf5108ee90f50fda285e1b4e4f67c34",
+    "qc.json": "399e221fece7d01f550ea5ad9380d3e219e5ef512b4e9887f0d4bbd10a254cb3"
+  }
+}

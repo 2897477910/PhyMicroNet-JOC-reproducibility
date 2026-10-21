@@ -1,0 +1,60 @@
+{
+  "records": 4200,
+  "ionization_available": 4200,
+  "state_prior_available": 4200,
+  "max_states": 8,
+  "conformer_fallback_records": 4,
+  "conformer_fallback_policy": "Retained if basic checks pass, independently flagged; no equal-accuracy claim for 2D fallback",
+  "n_selected_distribution": {
+    "1": 262,
+    "2": 926,
+    "3": 211,
+    "4": 742,
+    "5": 201,
+    "6": 89,
+    "7": 20,
+    "8": 1749
+  },
+  "retained_mass_describe_available": {
+    "count": 4200.0,
+    "mean": 0.9998376552932589,
+    "std": 0.0026708626040017258,
+    "min": 0.8970203025649481,
+    "25%": 0.999999999999314,
+    "50%": 1.0,
+    "75%": 1.0,
+    "max": 1.0000000000000002
+  },
+  "retained_mass_below_0_95": 3,
+  "retained_mass_below_0_50": 0,
+  "rejected_candidate_events": {},
+  "feature_names": [
+    "net_zero_fraction",
+    "uncharged_atom_fraction",
+    "zwitterion_fraction",
+    "positive_fraction",
+    "negative_fraction",
+    "mean_charge",
+    "charge_variance",
+    "entropy",
+    "dominant_occupancy",
+    "log1p_n_states"
+  ],
+  "feature_semantics": {
+    "zwitterion_fraction": "Charge-separated net-zero proxy; includes charged resonance forms such as nitro, not a chemically curated zwitterion classification",
+    "uncharged_atom_fraction": "Probability mass of states in which every atom has zero formal charge, not a fraction of individual atoms"
+  },
+  "data_source_sha256": "8be73c5481bf535fbf7e1e5f954bfec1874148142592bfa194afc295eca7165b",
+  "selection_code_sha256": "7c81364dff5e9355a1ae3a261d3a03c98e0572b764a26c9837ad4136ec947656",
+  "configuration_sha256": "7680c0ee106b45754d48c9eb36a0c9d9c680d5063efb944b1fca6595580bcde0",
+  "inference_source_sha256": {
+    "ionization_features.csv": "dd802d24cbb7166b04ae69e0cae06309e457169d48174a1f98891768a9e4b578",
+    "microstate_distributions.csv": "63c28f44a9d5810cd808f993a6ec164acc4a9c06c8adab643163aeb3c56e376f"
+  },
+  "cohort_labels_folds_parent_unchanged": true,
+  "feature_scaling": "Not performed here; fit imputation and scale on each training fold only",
+  "selection": "Population-ranked top states with compulsory parent; identical set for uniform/prior",
+  "population_scope": "Predicted and renormalized on selected guarded states; not measured or exhaustive physical populations",
+  "guard_scope": "Conservative parent stereo guard can exclude chemically valid transitions",
+  "fallback": "Parent-only unit state weight with explicit state_prior_available=false; missing scalar features remain NaN"
+}

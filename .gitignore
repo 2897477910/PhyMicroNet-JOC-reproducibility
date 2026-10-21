@@ -1,0 +1,12 @@
+reproduced/
+.venv/
+__pycache__/
+*.pyc
+*.pt
+*.ckpt
+*.docx
+*.pdf
+*.png
+*.svg
+.env
+*.log

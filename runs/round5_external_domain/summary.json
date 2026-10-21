@@ -1,0 +1,105 @@
+{
+  "status": "complete_structure_only",
+  "created_utc": "2026-09-21T11:25:48.788056+00:00",
+  "input_hashes": {
+    "AZ_molecules_csv": "8be73c5481bf535fbf7e1e5f954bfec1874148142592bfa194afc295eca7165b",
+    "ASAP_molecules_csv": "f08a7ac0f8d58bc4c21da2422c5c2db881ac5300a13a085d183148e5c6bff410",
+    "config": "97a6dd3aadffaf813f9420f4976d55080eee06cdb88d89f6e3dfda4bc3e9a64f",
+    "script": "66bf297b59566059e659a94ef56861a90ac03fb9f3ffc5fa1dce97c2031ef5e3"
+  },
+  "parsed_columns": {
+    "AZ": [
+      "raw_row",
+      "source_id",
+      "parent_smiles",
+      "compound_id",
+      "scaffold"
+    ],
+    "ASAP": [
+      "raw_row",
+      "source_id",
+      "parent_smiles",
+      "compound_id",
+      "scaffold",
+      "source_split",
+      "uncertain_stereo"
+    ]
+  },
+  "endpoint_columns_parsed": [],
+  "labels_used": false,
+  "reference_scope": "Complete AZ 4200-parent source space; not any single fold training set",
+  "fingerprint": {
+    "algorithm": "Morgan",
+    "radius": 2,
+    "bits": 1024,
+    "includeChirality": true
+  },
+  "scaffold_normalization": "Source ACYCLIC sentinel is mapped to the empty nonchiral Murcko scaffold bucket",
+  "parent_formal_charge_counts": {
+    "AZ": {
+      "0": 4193,
+      "1": 7
+    },
+    "ASAP": {
+      "0": 473
+    }
+  },
+  "AZ_records": 4200,
+  "AZ_compounds": 4178,
+  "ASAP_records": 473,
+  "ASAP_compounds": 413,
+  "source_split_counts": {
+    "Train": 347,
+    "Test": 126
+  },
+  "uncertain_stereo_records": 200,
+  "normalized_identity_overlap": 0,
+  "AZ_scaffolds_including_acyclic_bucket": 2419,
+  "ASAP_scaffolds_including_acyclic_bucket": 234,
+  "shared_scaffold_keys_including_acyclic_bucket": 3,
+  "ASAP_records_with_AZ_scaffold": 3,
+  "ASAP_compounds_with_AZ_scaffold": 3,
+  "AZ_acyclic_records": 5,
+  "ASAP_acyclic_records": 0,
+  "candidate_component_thresholds": [
+    0.6,
+    0.7
+  ],
+  "cross_compound_parent_pair_edges": {
+    "0.6": 3747,
+    "0.7": 1636
+  },
+  "candidate_component_interpretation": "Transitive similarity-connected candidate groups, not verified series or independent units",
+  "prior_comparison": {
+    "status": "complete",
+    "labels_used": false,
+    "rows": [
+      {
+        "dataset": "AZ",
+        "n_records": 4200,
+        "available": 4200,
+        "mean_net_zero": 0.57035231590271,
+        "median_net_zero": 0.7690535187721252,
+        "q25_net_zero": 0.06472127139568329,
+        "q75_net_zero": 0.9994804859161377,
+        "net_zero_below_0_1": 1246,
+        "net_zero_0_1_to_below_0_9": 1037,
+        "net_zero_at_least_0_9": 1917,
+        "mean_selected_states": 5.091904761904762
+      },
+      {
+        "dataset": "ASAP",
+        "n_records": 473,
+        "available": 473,
+        "mean_net_zero": 0.7437681555747986,
+        "median_net_zero": 0.9970904588699341,
+        "q25_net_zero": 0.2345331311225891,
+        "q75_net_zero": 0.999495804309845,
+        "net_zero_below_0_1": 87,
+        "net_zero_0_1_to_below_0_9": 58,
+        "net_zero_at_least_0_9": 328,
+        "mean_selected_states": 5.386892177589852
+      }
+    ]
+  }
+}

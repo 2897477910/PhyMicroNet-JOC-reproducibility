@@ -1,0 +1,13 @@
+{
+  "configuration_sha256": "97a6dd3aadffaf813f9420f4976d55080eee06cdb88d89f6e3dfda4bc3e9a64f",
+  "n_records": 473,
+  "graph_fits_used": 90,
+  "external_training_fits": 0,
+  "per_model_ensemble": "15 AZ fits: five folds for each of three seeds",
+  "uncertainty": "Compound bootstrap conditional on fitted models; related scaffold series and source shift limit independence",
+  "artifact_hashes": {
+    "predictions.csv": "4ad466e90378082ef020c24bb799d9d390705d016a7a6867d8110d899069f42e",
+    "metrics.csv": "31983c19ff4085b080d6be24cfcc59e436ec9d87ce07088a50885a6c7c60090a",
+    "paired_comparisons.csv": "2de5aad002012cc619014a154d22c00a2858435a87c11516ffa7f3641627342f"
+  }
+}

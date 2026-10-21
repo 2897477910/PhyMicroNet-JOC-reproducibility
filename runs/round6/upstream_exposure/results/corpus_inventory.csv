@@ -1,0 +1,9 @@
+corpus,published_role,sha256,bytes,rows,state_occurrences,screen_candidates,standardized_candidates,failed_states
+chembl_train,released pretraining train candidate corpus,d3e1d0b47f84eb854656925869210f96d0a96a3cfa7e05fc1c25894dc7870a45,210996829,1106294,3082908,12510,12507,202
+chembl_valid,released pretraining validation candidate corpus,847c3f02ca5fbd9a83f06039972be1bbef8b375867965a3beff8d6ab46dac2af,1907444,10000,28275,113,113,1
+dwar-iBond,released fine-tuning candidate corpus; exact 8228-row checkpoint version unrecovered,c5359e9d11afa21bfe59aa023afb8674d206440e9bf188c87de5506e1994d14d,1106172,8232,27134,499,497,2
+novartis_acid,released evaluation corpus; checkpoint task name indicates validation role,21ef450a76b6c9da5d69b28d6a2119831d373157dba705e59644e685c23290e1,23238,112,372,31,31,0
+novartis_base,released evaluation corpus; checkpoint task name indicates validation role,415f823028bdbf7c73397d93556d5f717afde00e4ea705b6335cd1f19ebd9dd8,44886,168,696,60,60,0
+sampl6,published test reference only; not asserted to be training,26bd8d1dc833ed9b61fad7f0ba800bca46cef9f98784bc91a2dbf07ef0fc60df,5138,31,111,18,18,0
+sampl7,published test reference only; not asserted to be training,5f115afab4610457896bd86119a6c83879cde42ebcfc674d26e161036a907452,2223,20,43,0,0,0
+sampl8,published test reference only; not asserted to be training,c4a39384e960b24b0a1e27d79bcacce140a47c438c2b02312638473c913ad9b8,5224,25,117,18,18,0
